@@ -1,0 +1,69 @@
+// Comments
+bold-line {
+    font-display: bold-line;
+}
+
+label {
+    margin-left: 10px;
+    padding: 10;
+    font-size: .8em;
+    color: rgb(31, 12, 209);
+}
+
+button {
+    margin-left: 10px;  //Put a 10 pixel space to the left of every button
+    font-size: .6em;
+    display: inline-block;
+}
+
+ul {
+    list-style-type: none;  //No bullets or numbers on the list
+    margin: 0;
+    padding: 0;
+    margin-top: 5px;  //Put a 5 pixel space between each line in the list
+    align-items: left;
+}
+
+//Column-specific display settings
+//Adjust the width % to make a column larger or smaller.
+//NOTE:  the picture-display width also controls how large the picture is.
+.picture-display {
+    width: 5%;
+}
+.name-display {
+    width: 10%;
+    margin-left: 10px;  //Put a 10 pixel space between the picture and the name
+}
+.age-display {
+    width: 5%;
+}
+.interests-display {
+    width: 10%;
+}
+.address-display {
+    width: 20%;
+}
+
+
+//This controls how the overall list displays.
+.list-display {
+    display:flex;  //Put each item on the same row.
+    align-items:left;  //Aligns each item to the left of it's respective column
+    flex-direction: row;
+
+    h5 {
+        font-size: 40px;
+    }
+
+    //Make the image rounded (i.e. a circle if originally square)
+    img {
+        border-radius: 50%;
+    }
+
+    li {
+        font-size: 20px;
+        list-style-position: inside;
+        border-radius: 4px;
+        display: inline-block;
+    }
+}

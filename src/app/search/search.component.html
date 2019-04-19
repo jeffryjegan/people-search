@@ -1,0 +1,53 @@
+<!--Comments-->
+<div style="line-height: 0pt">
+  <h3>Enter any part of a person's name and click Search</h3>
+  <h3>to see a listing of all people whose name includes that text.</h3>
+  <h3>NOTE:  This search is case sensitive.</h3>
+</div>
+<h2>
+  <i>Name (Whole or Part): </i> 
+  <input type="text" #titleInput>  <!--Text box for entering search data-->
+  <button name="peopleSearch" (click)='nowSearch(titleInput.value)'>Search</button>  <!--This is the search button-->
+</h2>
+<!--When the search button is clicked, the following label appears until the search is complete.
+    NOTE:  for a normal search, this happens so fast it is not seen.
+            But for a search that has a delay, this appears.-->
+<label *ngIf="searching">Searching for people with "{{ titleInput.value }}" in their name...</label>
+<hr class=bold-line>
+<h2>People Directory:</h2>
+  <!--Show the column headings-->
+  <ul class="list-display">
+    <li class="picture-display">Picture</li>
+    <li class="name-display">Name</li>
+    <li class="age-display">Age</li>
+    <li class="interests-display">Interests</li>
+    <li class="address-display">Address</li>
+  </ul>
+  <hr>
+  <div *ngIf="!titleInput.value">
+    <!--If there is nothing in the search box (or the search button has not been clicked), display the unfiltered list-->
+    <ul class="list-display" *ngFor="let person of people">
+      <img class="picture-display" [src]="person.pictureLocation" >
+      <li class="name-display">{{ person.name }}</li>
+      <li class="age-display">{{ person.age }}</li>
+      <li class="interests-display">{{ person.interests }}</li>
+      <li class="address-display">{{ person.address }} <br/> {{ person.cityStateZip }}</li>
+      <li class="csz-display"></li>
+    </ul>
+  </div>
+  <div *ngIf="titleInput.value && !searching">
+    <!--If there is text in the text box and the search is complete, display the filtered list.
+        searching=true when the search function is in progress-->
+      <ul class="list-display" *ngFor="let person of people">
+        <!--Only display those records that have the search text in the name
+            NOTE:  the search is case sensitive.-->
+        <ng-container *ngIf="person.name.includes(titleInput.value)"> 
+          <img class="picture-display" [src]="person.pictureLocation" >
+          <li class="name-display">{{ person.name }}</li>
+          <li class="age-display">{{ person.age }}</li>
+          <li class="interests-display">{{ person.interests }}</li>
+          <li class="address-display">{{ person.address }} <br/> {{ person.cityStateZip }}</li>
+          <li class="csz-display"></li>
+        </ng-container>
+      </ul>
+  </div>
