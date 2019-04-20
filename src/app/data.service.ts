@@ -20,14 +20,14 @@ export class DataService {
   getPeople() {
     const httpOptions = {
       headers: new HttpHeaders({
-        'Access-Control-Allow-Origin': 'http://localhost:4200/',
+        'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,OPTIONS',
         'Access-Control-Allow-Headers': '*',
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       })
     };
-    this.baseUrl = 'http://localhost:49717/api/People'
+    this.baseUrl = 'https://peoplesearchapi2019.azurewebsites.net/api/People'
     return this.http.get(this.baseUrl, httpOptions)
   }
 }
