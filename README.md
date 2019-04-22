@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 # Code
 
-The code for this application is here in this GitHub repository and the people-search-api repository.  
+The code for this application is here in this GitHub repository (https://github.com/jeffryjegan/people-search) and the people-search-api repository (https://github.com/jeffryjegan/people-search-api).  
 The front-end files are in this repository.  The run-time compiled code is in dist/people-search.
 The back-end files are in the people-search-api repository.
 
