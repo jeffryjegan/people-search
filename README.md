@@ -12,7 +12,7 @@ The back-end files are in the people-search-api repository.
 
 There are two options for running the Angular front-end.
 1. You can clone the repository, navigate to the dist/people-search folder and double-click the index.html file.
-2. You can also run the front-end directly by going to https://jeffryjegan.github.com.
+2. You can also run the front-end directly by going to https://jeffryjegan.github.io.
 
 # Running the Back-end directly
 
