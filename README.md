@@ -19,4 +19,8 @@ There are two options for running the Angular front-end.
 The back-end can return the people list in both JSON and XML formats.  However, the front-end only uses the JSON format.  Therefore, to see the data in XML format, and otherwise review the back-end web API, go to https://peoplesearchapi2019.azurewebsites.net/api/People?format=XML.
 
 # Testing the Delay
-One of the program requirements was to simulate a delay.  To test this, enter in the Search box any text that includes "art".  This will cause a 15 second delay.  During the delay, a "searching..." note will display.  Once the delay is complete, the "searching..." note will disappear and the search results will display.
+One of the program requirements was to simulate a delay.  To test this, enter in the Search box any text that includes the letter "i".  This will cause a 15 second delay.  During the delay, a "searching..." note will display.  Once the delay is complete, the "searching..." note will disappear and the search results will display.
+
+# Release 2
+In release 2 I have added the Google lookup for the name and the Google Map for the address.  Both open in a separate tab.
+I have also added a couple of Unit Tests.
