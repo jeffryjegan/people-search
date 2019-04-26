@@ -3,6 +3,8 @@
   <h3>Enter any part of a person's name and click Search</h3>
   <h3>to see a listing of all people whose name includes that text.</h3>
   <h3>NOTE:  This search is case sensitive.</h3>
+  <h3>Links:  Click name to search Google for information on this person.</h3>
+  <h3 style="margin-left: 57px">Click address to see a map for that address on a separate page.</h3>
 </div>
 <h2>
   <i>Name (Whole or Part): </i> 
@@ -28,12 +30,13 @@
     <!--If there is nothing in the search box (or the search button has not been clicked), display the unfiltered list-->
     <ul class="list-display" *ngFor="let person of people">
       <img class="picture-display" [src]="person.pictureLocation" >
-      <li class="name-display">{{ person.name }}</li>
+      <li class="name-display"> <a target="map" href="https://www.google.com/search?client=ms-google-coop&q={{ person.name }}&cx=014936796962367459393:ct2bpnroybw">{{ person.name }}</a> </li>
       <li class="age-display">{{ person.age }}</li>
       <li class="interests-display">{{ person.interests }}</li>
-      <li class="address-display">{{ person.address }} <br/> {{ person.cityStateZip }}</li>
-      <li class="csz-display"></li>
-    </ul>
+      <li class="address-display"> 
+        <a id="addressLink" target="map2" href="https://www.google.com/maps/embed/v1/place?q={{ person.address }} + ', ' + {{ person.cityStateZip }}&key=AIzaSyBX-JJRLzFIXDntYuTIYgOzuRXnvwBgYUE">{{ person.address }} <br/> {{ person.cityStateZip }}</a>
+      </li>
+  </ul>
   </div>
   <div *ngIf="titleInput.value && !searching">
     <!--If there is text in the text box and the search is complete, display the filtered list.
@@ -43,11 +46,16 @@
             NOTE:  the search is case sensitive.-->
         <ng-container *ngIf="person.name.includes(titleInput.value)"> 
           <img class="picture-display" [src]="person.pictureLocation" >
-          <li class="name-display">{{ person.name }}</li>
+          <li class="name-display"> <a target="map3" href="https://www.google.com/search?client=ms-google-coop&q={{ person.name }}&cx=014936796962367459393:ct2bpnroybw">{{ person.name }}</a> </li>
           <li class="age-display">{{ person.age }}</li>
           <li class="interests-display">{{ person.interests }}</li>
-          <li class="address-display">{{ person.address }} <br/> {{ person.cityStateZip }}</li>
-          <li class="csz-display"></li>
-        </ng-container>
+          <li class="address-display"> 
+            <a id="addressLink" target="map4" href="https://www.google.com/maps/embed/v1/place?q={{ person.address }} + ', ' + {{ person.cityStateZip }}&key=AIzaSyBX-JJRLzFIXDntYuTIYgOzuRXnvwBgYUE">{{ person.address }} <br/> {{ person.cityStateZip }}</a>
+          </li>
+            </ng-container>
       </ul>
   </div>
+  <iframe class="map-display" name="iframe_a"></iframe>
+  <iframe class="map-display" name="iframe_b"></iframe>
+  <iframe class="map-display" name="iframe_c"></iframe>
+  <iframe class="map-display" name="iframe_d"></iframe>

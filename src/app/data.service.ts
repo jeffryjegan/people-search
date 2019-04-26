@@ -27,6 +27,7 @@ export class DataService {
         'Accept': 'application/json'
       })
     };
+//    this.baseUrl = 'http://localhost:49717/api/People'
     this.baseUrl = 'https://peoplesearchapi2019.azurewebsites.net/api/People'
     return this.http.get(this.baseUrl, httpOptions)
   }

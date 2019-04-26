@@ -1,3 +1,20 @@
+.list-info {
+    width: 70%;
+    float: left;
+}
+
+.map-display {
+    width: 30%;
+    float: left;
+    //name="map" id="map" width="0" height="0" style="
+    border: 0;
+}
+#iframe_a {
+    width: 1000;
+    height: 1000;
+}
+
+
 // Comments
 bold-line {
     font-display: bold-line;
@@ -29,21 +46,39 @@ ul {
 //NOTE:  the picture-display width also controls how large the picture is.
 .picture-display {
     width: 5%;
+    min-width: 60px;
 }
 .name-display {
-    width: 10%;
+    width: 20%;
+    max-width: 120px;
     margin-left: 10px;  //Put a 10 pixel space between the picture and the name
 }
 .age-display {
-    width: 5%;
+    width: 10%;
+    max-width: 50px;
 }
 .interests-display {
-    width: 10%;
-}
-.address-display {
     width: 20%;
 }
-
+.address-display {
+    width: 30%;
+}
+#map {
+    width: 400px;
+    height: 400px;
+}
+#map2 {
+    width: 400px;
+    height: 400px;
+}
+#map3 {
+    width: 400px;
+    height: 400px;
+}
+#map4 {
+    width: 400px;
+    height: 400px;
+}
 
 //This controls how the overall list displays.
 .list-display {
@@ -66,4 +101,6 @@ ul {
         border-radius: 4px;
         display: inline-block;
     }
+
+
 }
